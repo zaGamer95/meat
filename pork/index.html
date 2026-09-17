@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pork — buying and cooking</title>
-<meta name="description" content="Why pork is safe at 145 degrees, and how to keep a lean animal from drying out.">
+<title>Pork — cuts, names and cooking</title>
+<meta name="description" content="An interactive pork primal diagram with cut names in English, Korean, Japanese and Chinese, plus temperatures and cooking method for each cut.">
 <link rel="canonical" href="https://wonbo.site/meat/pork/">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://wonbo.site/meat/pork/">
-<meta property="og:title" content="Pork — buying and cooking">
-<meta property="og:description" content="Why pork is safe at 145 degrees, and how to keep a lean animal from drying out.">
+<meta property="og:title" content="Pork — cuts, names and cooking">
+<meta property="og:description" content="Interactive cut diagram with names in four languages.">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='white'/><rect x='4' y='4' width='92' height='92' fill='none' stroke='%23c8102e' stroke-width='7'/><text x='50' y='73' font-size='62' font-family='Georgia,serif' font-weight='bold' fill='%23141414' text-anchor='middle'>P</text></svg>">
@@ -37,18 +37,78 @@
 </header>
 
 <main id="main">
-  <section class="hero">
+
+  <section class="finder">
     <div class="wrap">
-      <p class="eyebrow">Pork</p>
-      <h1>Pork</h1>
-      <p>
-        Modern pork is far leaner than the pork the old rules were written for, which is
-        why so much of it comes out dry. Almost everything worth knowing follows from
-        that one fact.
-      </p>
+      <div class="finder-top">
+        <div class="search-wrap">
+          <label for="cut-search" id="search-label">Search cuts</label>
+          <input type="text" id="cut-search" autocomplete="off" spellcheck="false"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false"
+                 aria-controls="suggest" placeholder="Search cuts">
+          <ul id="suggest" role="listbox" aria-labelledby="search-label" hidden></ul>
+        </div>
+        <div class="langs" id="langs" role="group" aria-label="Language"></div>
+      </div>
+
+      <div class="diagram-stage">
+        <svg id="diagram" viewBox="0 0 1000 620" role="group" aria-label="Pork primal cuts diagram" xmlns="http://www.w3.org/2000/svg">
+
+          <g class="body">
+            <path class="tail" d="M880 234 C906 228, 918 248, 906 262 C896 274, 880 268, 884 256"/>
+            <path d="M356 452 L350 526 L346 552 L378 552 L381 524 L383 456 Z"/>
+            <path d="M396 454 L400 522 L396 550 L425 550 L429 520 L423 452 Z"/>
+            <path d="M770 404 C761 440, 760 470, 771 496 L764 528 L760 554 L793 554 L797 528 L802 496
+                     C813 470, 816 438, 817 404 Z"/>
+            <path d="M824 400 C817 436, 816 462, 827 490 L821 526 L817 552 L848 552 L852 526 L857 490
+                     C866 462, 868 430, 868 396 Z"/>
+            <path d="M272 228 C242 217, 208 221, 186 236 L174 213 C161 189, 137 181, 125 192
+                     C131 208, 145 226, 158 239 C135 253, 113 273, 101 295
+                     C92 312, 97 329, 114 337 C136 346, 161 339, 171 327
+                     C198 339, 234 343, 264 335 L272 321 Z"/>
+            <ellipse class="snout" cx="106" cy="313" rx="17" ry="15" transform="rotate(-18 106 313)"/>
+            <circle cx="170" cy="264" r="6" class="eye"/>
+          </g>
+
+          <g class="primals">
+            <path class="primal" data-primal="butt"
+                  d="M252 232 C276 200, 302 186, 330 184 L448 170 L448 300 L252 300 Z"/>
+            <path class="primal" data-primal="loin"
+                  d="M448 170 L712 166 L712 300 L448 300 Z"/>
+            <path class="primal" data-primal="ham"
+                  d="M712 166 C790 170, 850 186, 884 216 C892 256, 890 330, 860 400
+                     L712 418 Z"/>
+            <path class="primal" data-primal="jowl"
+                  d="M252 300 L330 300 L330 404 C302 410, 272 404, 258 390 C250 360, 250 328, 252 300 Z"/>
+            <path class="primal" data-primal="picnic"
+                  d="M330 300 L448 300 L448 426 L426 460 L357 456 L330 404 Z"/>
+            <path class="primal" data-primal="belly"
+                  d="M448 300 L712 300 L712 418 L448 426 Z"/>
+          </g>
+
+          <g class="divides">
+            <path d="M448 171 L448 426"/>
+            <path d="M712 167 L712 418"/>
+            <path d="M254 300 L712 300"/>
+            <path d="M330 300 L330 404"/>
+          </g>
+
+          <g class="labels">
+            <text x="350" y="252" font-size="21">SHOULDER</text>
+            <text x="580" y="248" font-size="34">LOIN</text>
+            <text x="796" y="300" font-size="34">HAM</text>
+            <text x="291" y="356" font-size="15">JOWL</text>
+            <text x="389" y="362" font-size="15">PICNIC</text>
+            <text x="580" y="372" font-size="28">BELLY</text>
+          </g>
+        </svg>
+      </div>
+      <p class="diagram-hint" id="diagram-hint">Hover a section for names · click for detail</p>
+      <p class="animal-note" id="animal-note"></p>
+
+      <div id="detail" hidden></div>
     </div>
   </section>
-
   <section>
     <div class="wrap">
       <h2>The temperature everyone still gets wrong</h2>
@@ -108,11 +168,16 @@
   </section>
 </main>
 
+<div id="tip" hidden></div>
+
 <footer class="site-footer">
   <div class="wrap">
     <span><a href="../">← All meat</a></span>
   </div>
 </footer>
 
+<script src="../data.js"></script>
+<script>window.ANIMAL = PORK;</script>
+<script src="../app.js"></script>
 </body>
 </html>

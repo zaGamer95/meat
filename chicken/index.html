@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chicken — buying and cooking</title>
-<meta name="description" content="Air-chilled versus water-chilled, breaking down a whole bird, and getting crisp skin.">
+<title>Chicken — cuts, names and cooking</title>
+<meta name="description" content="An interactive chicken parts diagram with names in English, Korean, Japanese and Chinese, plus temperatures and cooking method for each cut.">
 <link rel="canonical" href="https://wonbo.site/meat/chicken/">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://wonbo.site/meat/chicken/">
-<meta property="og:title" content="Chicken — buying and cooking">
-<meta property="og:description" content="Air-chilled versus water-chilled, breaking down a whole bird, and getting crisp skin.">
+<meta property="og:title" content="Chicken — cuts, names and cooking">
+<meta property="og:description" content="Interactive cut diagram with names in four languages.">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='white'/><rect x='4' y='4' width='92' height='92' fill='none' stroke='%23c8102e' stroke-width='7'/><text x='50' y='73' font-size='62' font-family='Georgia,serif' font-weight='bold' fill='%23141414' text-anchor='middle'>C</text></svg>">
@@ -37,17 +37,84 @@
 </header>
 
 <main id="main">
-  <section class="hero">
+
+  <section class="finder">
     <div class="wrap">
-      <p class="eyebrow">Chicken</p>
-      <h1>Chicken</h1>
-      <p>
-        The cheapest meat at the counter and the easiest to ruin. Most of the decisions
-        happen before cooking — how the bird was chilled, and whether you buy it whole.
-      </p>
+      <div class="finder-top">
+        <div class="search-wrap">
+          <label for="cut-search" id="search-label">Search cuts</label>
+          <input type="text" id="cut-search" autocomplete="off" spellcheck="false"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false"
+                 aria-controls="suggest" placeholder="Search cuts">
+          <ul id="suggest" role="listbox" aria-labelledby="search-label" hidden></ul>
+        </div>
+        <div class="langs" id="langs" role="group" aria-label="Language"></div>
+      </div>
+
+      <div class="diagram-stage">
+        <svg id="diagram" viewBox="0 0 1000 620" role="group" aria-label="Chicken cuts diagram" xmlns="http://www.w3.org/2000/svg">
+
+          <g class="body">
+            <!-- comb, head, beak, wattle -->
+            <path d="M320 96 C324 76, 337 69, 343 81 C350 65, 365 68, 364 84 C375 74, 386 84, 379 99 Z"/>
+            <path d="M300 140 C300 112, 322 92, 350 92 C378 92, 397 112, 397 138
+                     C397 162, 379 179, 356 182 L318 179 C306 168, 300 155, 300 140 Z"/>
+            <path d="M301 134 L258 145 L301 159 Z"/>
+            <path d="M320 181 C313 198, 320 213, 332 213 C344 213, 349 198, 341 180 Z"/>
+            <circle cx="341" cy="129" r="6" class="eye"/>
+
+            <!-- tail feathers -->
+            <path d="M756 232 L836 190 L818 236 L874 222 L832 272 L800 290 Z"/>
+
+            <!-- legs and feet -->
+            <path d="M648 492 L640 556 L612 578 L580 586 L580 598 L656 598 L668 556 L676 496 Z"/>
+            <path d="M700 486 L696 548 L670 572 L638 582 L638 594 L712 592 L724 550 L730 488 Z"/>
+          </g>
+
+          <g class="primals">
+            <path class="primal" data-primal="neck"
+                  d="M316 178 C304 214, 310 256, 334 288 L424 272 L406 176
+                     C382 190, 342 190, 316 178 Z"/>
+            <path class="primal" data-primal="back"
+                  d="M406 176 C486 158, 590 160, 668 184 C716 199, 748 214, 762 238
+                     L700 282 L424 272 Z"/>
+            <path class="primal" data-primal="breast"
+                  d="M334 288 L424 272 L480 280 L472 452 C424 450, 378 428, 348 396
+                     C322 368, 314 326, 334 288 Z"/>
+            <path class="primal" data-primal="wing"
+                  d="M480 280 L700 282 L676 424 L472 452 Z"/>
+            <path class="primal" data-primal="thigh"
+                  d="M762 238 C790 272, 802 320, 794 366 C787 402, 768 424, 742 432
+                     L676 424 L700 282 Z"/>
+            <path class="primal" data-primal="drumstick"
+                  d="M676 424 L742 432 C736 470, 710 494, 676 498
+                     C640 502, 610 484, 600 456 Z"/>
+          </g>
+
+          <g class="divides">
+            <path d="M406 176 L424 272"/>
+            <path d="M334 288 L424 272 L480 280 L700 282 L762 238"/>
+            <path d="M480 280 L472 452"/>
+            <path d="M700 282 L676 424"/>
+            <path d="M676 424 L742 432"/>
+          </g>
+
+          <g class="labels">
+            <text x="372" y="238" font-size="16">NECK</text>
+            <text x="580" y="228" font-size="30">BACK</text>
+            <text x="398" y="368" font-size="19">BREAST</text>
+            <text x="580" y="374" font-size="28">WING</text>
+            <text x="736" y="336" font-size="19">THIGH</text>
+            <text x="672" y="462" font-size="13">DRUMSTICK</text>
+          </g>
+        </svg>
+      </div>
+      <p class="diagram-hint" id="diagram-hint">Hover a section for names · click for detail</p>
+      <p class="animal-note" id="animal-note"></p>
+
+      <div id="detail" hidden></div>
     </div>
   </section>
-
   <section>
     <div class="wrap">
       <h2>Air-chilled vs water-chilled</h2>
@@ -108,11 +175,16 @@
   </section>
 </main>
 
+<div id="tip" hidden></div>
+
 <footer class="site-footer">
   <div class="wrap">
     <span><a href="../">← All meat</a></span>
   </div>
 </footer>
 
+<script src="../data.js"></script>
+<script>window.ANIMAL = CHICKEN;</script>
+<script src="../app.js"></script>
 </body>
 </html>
