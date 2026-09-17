@@ -435,3 +435,64 @@ ul.cuts li.cut.is-on {
   ul.cuts li.cut.is-on { box-shadow: -0.5rem 0 0 var(--red-wash), 0.5rem 0 0 var(--red-wash); }
 }
 #diagram .body .nostril { fill: #fff; opacity: 0.55; }
+
+/* ============================================================
+   Grading systems and breeds
+   ============================================================ */
+
+.grade-chip {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 0.9em;
+  border: 1px solid var(--red); color: var(--red);
+  padding: 0.05em 0.4em; margin-right: 0.15em;
+  white-space: nowrap;
+}
+
+.sys { margin: 2.25rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.sys:first-of-type { border-top: 0; padding-top: 0; }
+.sys h3 { margin-top: 0; display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.sys h3 .flagword {
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--red);
+}
+.sys dl {
+  margin: 1rem 0 0; padding: 0;
+  display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1.1rem;
+  font-size: 0.95rem;
+}
+.sys dt {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); padding-top: 0.3rem;
+}
+.sys dd { margin: 0; color: var(--text-soft); }
+
+/* richness scale */
+
+.scale { margin: 1.75rem 0; }
+.scale-bar { display: flex; border: 1px solid var(--line-red); }
+.scale-seg {
+  flex: 1; padding: 0.7rem 0.6rem 0.75rem;
+  border-left: 1px solid var(--line-red);
+  text-align: center;
+}
+.scale-seg:first-child { border-left: 0; }
+.scale-seg .s-name { display: block; font-weight: 700; font-size: 0.85rem; }
+.scale-seg .s-sub { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+.scale-seg[data-level="1"] { background: #fff; }
+.scale-seg[data-level="2"] { background: #fdeef0; }
+.scale-seg[data-level="3"] { background: #f9d6db; }
+.scale-seg[data-level="4"] { background: #f2b3bc; }
+.scale-ends {
+  display: flex; justify-content: space-between;
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--red); margin-top: 0.5rem; font-weight: 700;
+}
+
+@media (max-width: 34rem) {
+  .sys dl { grid-template-columns: 1fr; gap: 0.1rem; }
+  .sys dt { padding-top: 0.6rem; }
+  .scale-bar { flex-wrap: wrap; }
+  .scale-seg { flex: 1 1 50%; border-top: 1px solid var(--line-red); }
+}
+/* four-column comparisons need more room than the default table minimum */
+.table-scroll table.wide { min-width: 46rem; }

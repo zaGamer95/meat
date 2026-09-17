@@ -128,32 +128,295 @@
       <div id="detail" hidden></div>
     </div>
   </section>
-  <section>
+  <section id="grading">
     <div class="wrap">
-      <h2>Grades</h2>
-      <p class="lede">USDA grading is about marbling — the flecks of intramuscular fat — and the age of the animal. It is voluntary, so ungraded beef is not necessarily worse, just unassessed.</p>
+      <h2>Grading</h2>
+      <p class="lede">
+        At a Korean counter you will see 한우 beside US, Australian and New Zealand beef,
+        each carrying a grade from its own country. Those grades cannot be converted into
+        one another, because they are not measuring the same thing.
+      </p>
+
+      <div class="note">
+        <strong>What differs is the question each system asks.</strong> Korea and Japan ask
+        <em>how much fat is inside the muscle</em>. The US asks that too, plus the age of the
+        animal. Australia asks something else entirely — <em>how will this particular cut eat,
+        cooked this particular way</em>. New Zealand mostly does not ask at all. A
+        <span class="grade-chip">1++</span> and an <span class="grade-chip">A5</span> and a
+        <span class="grade-chip">MSA 5★</span> are three different claims, not three points on
+        one ladder.
+      </div>
 
       <div class="table-scroll">
-        <table>
+        <table class="wide">
+          <caption>What each system actually measures.</caption>
           <thead>
-            <tr><th scope="col">Grade</th><th scope="col">Marbling</th><th scope="col">Worth it for</th></tr>
+            <tr>
+              <th scope="col">System</th>
+              <th scope="col">What you see</th>
+              <th scope="col">What it measures</th>
+              <th scope="col">What it will not tell you</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>Prime</td><td>Abundant</td><td>Dry-heat cuts where fat is the point — ribeye, strip.</td></tr>
-            <tr><td>Choice</td><td>Moderate</td><td>The sensible default for most cooking.</td></tr>
-            <tr><td>Select</td><td>Slight</td><td>Lean and cheap; marinate, or braise it.</td></tr>
+            <tr>
+              <td>Korea — KAPE</td>
+              <td class="temp">1++ / 1+ / 1 / 2 / 3<br/>plus A / B / C</td>
+              <td>Marbling above all, then meat colour, fat colour, texture and maturity. The letter is carcass yield.</td>
+              <td>How tender it will actually eat, or how it was raised.</td>
+            </tr>
+            <tr>
+              <td>United States — USDA</td>
+              <td class="temp">Prime / Choice / Select</td>
+              <td>Marbling, read against the animal’s maturity.</td>
+              <td>Breed, feed, or anything about a specific cut.</td>
+            </tr>
+            <tr>
+              <td>Japan — JMGA</td>
+              <td class="temp">A5, A4, B3 …</td>
+              <td>Letter = yield. Number = the <em>worst</em> of marbling, meat colour, firmness and fat colour.</td>
+              <td>How rich it is within a grade — A5 covers a wide band.</td>
+            </tr>
+            <tr>
+              <td>Australia — MSA</td>
+              <td class="temp">3★ / 4★ / 5★</td>
+              <td>Predicted eating quality, scored per cut <em>and</em> per cooking method.</td>
+              <td>Marbling as a headline number — that is a separate AUS-MEAT score.</td>
+            </tr>
+            <tr>
+              <td>New Zealand</td>
+              <td class="temp">usually none</td>
+              <td>Carcass classification — sex, age, fat depth, muscling. Not eating quality.</td>
+              <td>Almost anything a shopper wants. You are buying the brand and the spec.</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="note">
-        <strong>Grade does not predict flavour on its own.</strong> A Choice chuck roast
-        braised properly beats a Prime tenderloin cooked carelessly. Grade matters most
-        when the fat has no time to render — that is, for fast, dry heat.
+      <div class="sys">
+        <h3><span class="flagword">Korea</span> 한우 and the KAPE grade</h3>
+        <p>
+          Korean beef carries two grades at once, printed together as something like
+          <span class="grade-chip">1++ A</span>. They are unrelated to each other.
+        </p>
+        <dl>
+          <dt>Quality</dt>
+          <dd>육질등급 — <span class="grade-chip">1++</span> <span class="grade-chip">1+</span>
+              <span class="grade-chip">1</span> <span class="grade-chip">2</span>
+              <span class="grade-chip">3</span>, driven mainly by marbling, scored on a
+              1–9 BMS scale. Since the 2019 revision, 1++ means BMS 8–9, and the BMS number
+              itself is often printed beside it — <span class="grade-chip">1++(9)</span> is a
+              meaningfully fattier animal than <span class="grade-chip">1++(8)</span>.</dd>
+          <dt>Yield</dt>
+          <dd>육량등급 — <span class="grade-chip">A</span> <span class="grade-chip">B</span>
+              <span class="grade-chip">C</span>, how much saleable meat came off the carcass.
+              This matters to the butcher’s margin, not to your dinner. A 1++ C is still 1++ beef.</dd>
+          <dt>Watch for</dt>
+          <dd>Imported beef is not given a Korean grade. If a package shows a US or Australian
+              grade, that is the exporting country’s system, not a KAPE equivalent.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">United States</span> USDA quality grades</h3>
+        <p>
+          Grading is voluntary and paid for by the packer, so ungraded American beef is not
+          failed beef — it is often simply unassessed.
+        </p>
+        <dl>
+          <dt>Scale</dt>
+          <dd><span class="grade-chip">Prime</span> <span class="grade-chip">Choice</span>
+              <span class="grade-chip">Select</span> for anything you will meet at retail,
+              with lower grades going to processing.</dd>
+          <dt>Basis</dt>
+          <dd>Marbling in the ribeye at the twelfth rib, judged against maturity — a young
+              animal needs less marbling for the same grade than an older one.</dd>
+          <dt>Scarcity</dt>
+          <dd>Prime is roughly one carcass in ten, though that share has climbed sharply over
+              the last decade as feeding practices changed.</dd>
+          <dt>Watch for</dt>
+          <dd>Brand names like Certified Angus Beef are private specifications stacked on top
+              of a USDA grade, not a higher grade. They usually mean upper Choice with tighter
+              marbling requirements.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">Japan</span> JMGA — the A5 you have heard of</h3>
+        <dl>
+          <dt>Letter</dt>
+          <dd>Yield only. <span class="grade-chip">A</span> is an above-standard meat yield,
+              <span class="grade-chip">B</span> standard, <span class="grade-chip">C</span> below.
+              It says nothing about how the beef tastes. A B5 can eat better than an A4.</dd>
+          <dt>Number</dt>
+          <dd><span class="grade-chip">5</span> down to <span class="grade-chip">1</span>, set by
+              four separate assessments — marbling on a 1–12 BMS scale, meat colour and brightness,
+              firmness and texture, and fat colour and quality. The final number is the
+              <em>lowest</em> of the four, so one weak category caps the whole carcass.</dd>
+          <dt>The catch</dt>
+          <dd>Grade 5 covers BMS 8 through 12. That is an enormous range — the top of A5 is
+              dramatically richer than the bottom of it, at a very different price. Shops
+              selling serious wagyu will quote the BMS number; if nobody will, assume the low end.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">Australia</span> MSA — a different question entirely</h3>
+        <p>
+          Meat Standards Australia was built backwards from consumer taste panels rather than
+          forwards from carcass appearance. It is the only major system that grades a
+          <em>cut cooked a particular way</em> instead of a whole animal.
+        </p>
+        <dl>
+          <dt>Output</dt>
+          <dd><span class="grade-chip">3★</span> good everyday,
+              <span class="grade-chip">4★</span> better than everyday,
+              <span class="grade-chip">5★</span> premium — assigned per cut, per method. The same
+              carcass can yield a 5★ roast and a 3★ grilling steak.</dd>
+          <dt>Inputs</dt>
+          <dd>Marbling, ossification as a proxy for maturity, pH, hang method, hump height as an
+              indicator of <em>Bos indicus</em> content, and the ageing period.</dd>
+          <dt>Separately</dt>
+          <dd>Australia also runs an AUS-MEAT marbling score of 0–9, and Australian Wagyu is
+              usually sold on that number rather than on stars.</dd>
+          <dt>Why it matters</dt>
+          <dd>MSA is the system that will tell you a lean grass-fed cut is excellent. The
+              marbling-first systems structurally cannot.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">New Zealand</span> classification, not grading</h3>
+        <dl>
+          <dt>Reality</dt>
+          <dd>There is no consumer-facing quality grade comparable to the others. Carcasses are
+              classified by sex, dentition-estimated age, fat depth and muscling — a description
+              of the animal, not a prediction of the meal.</dd>
+          <dt>What to read instead</dt>
+          <dd>The brand, the breed, and the finishing claim. Almost all New Zealand beef is
+              pasture-raised to slaughter, and that single fact tells you more about how it will
+              cook than any number would.</dd>
+        </dl>
       </div>
     </div>
   </section>
 
+  <section id="breeds">
+    <div class="wrap">
+      <h2>Breeds</h2>
+      <p class="lede">
+        Grades describe one carcass. Breed and feeding describe what you are broadly buying —
+        and for a shopper, the differences come down to three practical things: how rich it is,
+        how it behaves in the pan, and how much of it you should put on a plate.
+      </p>
+
+      <div class="scale">
+        <div class="scale-bar">
+          <div class="scale-seg" data-level="1">
+            <span class="s-name">Grass-fed</span>
+            <span class="s-sub">NZ · AU pasture</span>
+          </div>
+          <div class="scale-seg" data-level="2">
+            <span class="s-name">Black Angus</span>
+            <span class="s-sub">US · AU grain-finished</span>
+          </div>
+          <div class="scale-seg" data-level="3">
+            <span class="s-name">한우 Hanwoo</span>
+            <span class="s-sub">Korea</span>
+          </div>
+          <div class="scale-seg" data-level="4">
+            <span class="s-name">和牛 Wagyu</span>
+            <span class="s-sub">Japan</span>
+          </div>
+        </div>
+        <div class="scale-ends">
+          <span>Leaner · firmer · eat more</span>
+          <span>Richer · softer · eat less</span>
+        </div>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">Korea</span> 한우 Hanwoo</h3>
+        <dl>
+          <dt>Eats like</dt>
+          <dd>Fine, evenly dispersed marbling rather than thick seams, and a clean beef flavour
+              that is less overtly sweet than wagyu. Fed long — typically around thirty months —
+              which is a large part of why it costs what it does.</dd>
+          <dt>In the pan</dt>
+          <dd>The fat softens at low heat, so thin slices on a hot grill are its best form. Thick
+              steaks work but waste the quality; the marbling is doing its job in seconds, not minutes.</dd>
+          <dt>Portion</dt>
+          <dd>At 1++, treat 150 g per person as generous. Richness arrives faster than hunger leaves.</dd>
+          <dt>Buy it when</dt>
+          <dd>You want 구이 — 등심, 채끝 or 갈비살 over charcoal, salt only, nothing in the way.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">Japan</span> 和牛 Wagyu</h3>
+        <dl>
+          <dt>Eats like</dt>
+          <dd>The extreme end. Intramuscular fat that is high in monounsaturated fat and melts
+              near body temperature, which is the literal mechanism behind “melts in the mouth.”
+              At the top of A5 the texture is closer to a rich sauce than to steak.</dd>
+          <dt>In the pan</dt>
+          <dd>Very hot, very briefly, no added fat — it renders its own immediately. Past medium
+              rare the fat leaves the muscle and you are paying for something that went into the pan.</dd>
+          <dt>Portion</dt>
+          <dd>80–120 g per person for A5. A full steak-sized serving is genuinely unpleasant for
+              most people, and that is not a failure of appetite.</dd>
+          <dt>Watch for</dt>
+          <dd>“Wagyu” outside Japan usually means a crossbreed, most often Wagyu over Angus.
+              That is a legitimate and often excellent product, but it is a different thing from
+              Japanese purebred, and it should not be priced the same.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">US · Australia</span> Black Angus</h3>
+        <dl>
+          <dt>Eats like</dt>
+          <dd>The most assertively beefy of the four. Marbling in visible flecks and seams rather
+              than a fine web, firmer fat, and a flavour that stands up to sauce, smoke and char
+              instead of being drowned by them.</dd>
+          <dt>In the pan</dt>
+          <dd>The most forgiving. Enough fat to survive a minute too long, enough structure to
+              hold a hard crust. This is the breed to learn on.</dd>
+          <dt>Portion</dt>
+          <dd>200–250 g is a normal steak and stays enjoyable to the last bite.</dd>
+          <dt>Watch for</dt>
+          <dd>Grain-finished Angus and grass-finished Angus eat very differently. The breed on the
+              label tells you less than the finishing does.</dd>
+        </dl>
+      </div>
+
+      <div class="sys">
+        <h3><span class="flagword">New Zealand · Australia</span> Grass-fed</h3>
+        <dl>
+          <dt>Eats like</dt>
+          <dd>Leaner, firmer, more mineral — some people read it as gamey, others as simply more
+              like beef. The fat is faintly yellow from beta-carotene in pasture, which is a sign
+              of diet, not of age or poor quality.</dd>
+          <dt>In the pan</dt>
+          <dd>Cooks noticeably faster, because there is less intramuscular fat to heat through.
+              Treating it like grain-fed beef is the usual mistake — pull it earlier than instinct
+              says, and rest it longer.</dd>
+          <dt>Portion</dt>
+          <dd>250 g and up. It is the one you can eat a proper plateful of.</dd>
+          <dt>Buy it when</dt>
+          <dd>You want beef flavour rather than fat texture, or you are cooking something where
+              rendered fat would be in the way — tataki, roast beef served cold, salads.</dd>
+        </dl>
+      </div>
+
+      <div class="note">
+        <strong>One rule that travels across all of it.</strong> Richness and portion size move in
+        opposite directions. The systems above are mostly measuring how much fat is in the muscle,
+        and the more there is, the less of it you want on the plate. A 5★ grass-fed sirloin and a
+        1++ 한우 등심 can both be excellent dinners — they are just not the same size dinner.
+      </div>
+    </div>
+  </section>
   <section>
     <div class="wrap">
       <h2>Doneness</h2>
