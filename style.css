@@ -496,3 +496,27 @@ ul.cuts li.cut.is-on {
 }
 /* four-column comparisons need more room than the default table minimum */
 .table-scroll table.wide { min-width: 46rem; }
+
+/* ---------- sources ---------- */
+
+.sources {
+  margin-top: 2.5rem; padding-top: 1.5rem;
+  border-top: 3px solid var(--red);
+}
+.sources h4 {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--red); margin: 0 0 0.6rem; padding: 0; border: 0;
+}
+.src-note { font-size: 0.85rem; color: var(--muted); margin: 0 0 1rem; max-width: 42rem; }
+.sources ol { margin: 0; padding-left: 1.2rem; }
+.sources li {
+  font-size: 0.85rem; color: var(--text-soft);
+  margin-bottom: 0.6rem; line-height: 1.6;
+}
+.sources li::marker { color: var(--red); font-weight: 700; }
+.sources cite { font-style: italic; }
+.note-aside {
+  font-size: 0.875rem; color: var(--muted);
+  margin: 1rem 0 0; max-width: 42rem;
+}
