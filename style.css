@@ -1,0 +1,232 @@
+/* ============================================================
+   Meat — buying and cooking
+   White ground, black text, thin red rules. Clean-kitchen feel.
+   No build step, no dependencies, no webfonts.
+   ============================================================ */
+
+:root {
+  --bg:          #ffffff;
+  --bg-alt:      #faf8f7;
+  --surface:     #ffffff;
+
+  --text:        #141414;
+  --text-soft:   #3a3a3a;
+  --muted:       #6e6e6e;
+
+  --red:         #c8102e;
+  --red-deep:    #9b0c23;
+  --red-wash:    #fdf3f4;
+  --line:        #e6e0de;
+  --line-red:    #e9b8bf;
+
+  --font-display: 'Alfa Slab One', 'Rockwell', Georgia, serif;
+  --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --wrap: 60rem;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+a { color: var(--red); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--red-deep); }
+
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--red);
+  padding: 0.6rem 1rem; z-index: 100;
+}
+.skip:focus { left: 1rem; top: 1rem; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--red);
+  background: var(--bg);
+}
+.site-header .wrap {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  min-height: 4rem; flex-wrap: wrap; padding-block: 0.9rem;
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.35rem; font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text); text-decoration: none;
+}
+.wordmark:hover { color: var(--text); }
+.wordmark .rule {
+  display: inline-block; width: 1.5rem; height: 2px;
+  background: var(--red); vertical-align: middle;
+  margin-left: 0.5rem;
+}
+.site-nav { margin-left: auto; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.site-nav a {
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-soft); text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--red); }
+.site-nav a[aria-current='page'] { color: var(--red); border-bottom-color: var(--red); }
+
+/* ---------- hero ---------- */
+
+.hero { padding: 3.5rem 0 2.75rem; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 5.5vw, 3rem);
+  font-weight: 400; line-height: 1.16;
+  margin: 0 0 1.1rem;
+  letter-spacing: 0.005em;
+}
+.hero p {
+  margin: 0; max-width: 42rem;
+  font-size: 1.125rem; color: var(--text-soft);
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--red); margin: 0 0 1rem;
+}
+
+/* ---------- sections ---------- */
+
+main section { padding: 2.75rem 0; border-top: 1px solid var(--line); }
+main section.hero { border-top: 0; }
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.2vw, 1.8rem);
+  font-weight: 400; line-height: 1.25;
+  margin: 0 0 0.6rem; letter-spacing: 0.005em;
+}
+h3 {
+  font-family: var(--font-body);
+  font-size: 1.15rem; font-weight: 700; margin: 2.25rem 0 0.5rem;
+  letter-spacing: 0.01em;
+}
+.lede { color: var(--muted); margin: 0 0 1.75rem; max-width: 42rem; }
+
+/* ---------- cards ---------- */
+
+.cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+.card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line-red);
+  border-top: 3px solid var(--red);
+  padding: 1.5rem;
+  text-decoration: none; color: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.card:hover {
+  background: var(--red-wash);
+  border-color: var(--red);
+  color: inherit;
+}
+.card .glyph { font-size: 1.75rem; line-height: 1; margin-bottom: 0.75rem; }
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 400; line-height: 1.25;
+  margin: 0 0 0.5rem; color: var(--text); letter-spacing: 0.005em;
+}
+.card p { margin: 0; font-size: 0.95rem; color: var(--text-soft); }
+.card .more {
+  margin-top: auto; padding-top: 1rem;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--red);
+}
+
+/* ---------- tables ---------- */
+
+.table-scroll { overflow-x: auto; margin: 1.5rem 0; }
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.975rem; min-width: 30rem;
+  border: 1px solid var(--line-red);
+}
+caption {
+  text-align: left; color: var(--muted);
+  font-size: 0.85rem; padding-bottom: 0.65rem;
+}
+th, td {
+  text-align: left; padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+thead th {
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--red); font-weight: 700;
+  border-bottom: 2px solid var(--red);
+  background: var(--bg);
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: var(--red-wash); }
+td.temp { font-family: var(--font-mono); white-space: nowrap; color: var(--text); font-size: 0.925rem; }
+
+/* ---------- callout ---------- */
+
+.note {
+  background: var(--bg);
+  border: 1px solid var(--line-red);
+  border-left: 3px solid var(--red);
+  padding: 1.1rem 1.35rem;
+  margin: 1.75rem 0;
+  font-size: 0.975rem;
+  color: var(--text-soft);
+}
+.note strong { color: var(--text); }
+
+.stub {
+  border: 1px dashed var(--line-red);
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.975rem;
+  background: var(--bg-alt);
+}
+.stub ul { margin-bottom: 0; padding-left: 1.2rem; }
+.stub li { margin-bottom: 0.3rem; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--red);
+  margin-top: 1rem;
+  padding: 1.75rem 0 3rem;
+  color: var(--muted); font-size: 0.85rem;
+}
+
+@media (max-width: 34rem) {
+  body { font-size: 1rem; }
+  .site-header .wrap { min-height: 0; gap: 0.75rem; }
+  .site-nav { gap: 1rem; width: 100%; margin-left: 0; }
+  .hero { padding: 2.5rem 0 2rem; }
+}
