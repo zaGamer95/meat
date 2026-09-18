@@ -33,3 +33,12 @@ Then visit <http://127.0.0.1:8765/>.
 [Alfa Slab One](https://fonts.google.com/specimen/Alfa+Slab+One) for display and
 [Archivo](https://fonts.google.com/specimen/Archivo) for body text, both served from
 Google Fonts under the SIL Open Font License.
+
+## Diagram artwork
+
+The animal silhouettes and primal outlines are adapted from public-domain works on
+Wikimedia Commons, restyled and re-mapped to this site's cut data:
+
+- Beef — [US Beef cuts.svg](https://commons.wikimedia.org/wiki/File:US_Beef_cuts.svg) by Ysangkok (public domain)
+- Pork — [American Pork Cuts.svg](https://commons.wikimedia.org/wiki/File:American_Pork_Cuts.svg) by GameKeeper (public domain)
+- Chicken — [Chicken clipart 01.svg](https://commons.wikimedia.org/wiki/File:Chicken_clipart_01.svg) by LadyofHats (public domain); the part divisions are drawn for this site and clipped to its outline

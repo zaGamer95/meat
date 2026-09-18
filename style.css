@@ -314,11 +314,6 @@ td.temp { font-family: var(--font-mono); white-space: nowrap; color: var(--text)
 
 #diagram .body path, #diagram .body circle, #diagram .body ellipse { fill: var(--text); }
 #diagram .body .eye { fill: #fff; }
-#diagram .body .snout { fill: #fff; opacity: 0.16; }
-#diagram .body .tail {
-  fill: none; stroke: var(--text); stroke-width: 9;
-  stroke-linecap: round; stroke-linejoin: round;
-}
 
 #diagram .primal {
   fill: var(--text);
@@ -330,10 +325,21 @@ td.temp { font-family: var(--font-mono); white-space: nowrap; color: var(--text)
 #diagram .primal:focus { outline: none; }
 #diagram .primal:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 
-#diagram .divides path {
-  fill: none; stroke: #fff; stroke-width: 4;
-  stroke-linecap: round; stroke-dasharray: 0.1 11;
+#diagram .divides path,
+#diagram .primal.edge {
+  stroke: #fff; stroke-width: 1.5;
+  stroke-linecap: round; stroke-dasharray: 0.1 4.2;
 }
+#diagram .divides path { fill: none; }
+#diagram .primal.is-hover { fill: var(--red); }
+#diagram .rim {
+  fill: none; stroke: var(--text); stroke-width: 12;
+  stroke-linejoin: round; pointer-events: none;
+}
+#diagram .overlay { pointer-events: none; }
+#diagram .body .comb { fill: var(--red); }
+#diagram .body .patch { fill: none; stroke: var(--text); stroke-width: 3; }
+#diagram.clipdiag .primal { stroke: #fff; stroke-width: 1.4; stroke-linecap: round; stroke-dasharray: 0.1 4; }
 #diagram .labels text {
   fill: #fff; text-anchor: middle;
   font-family: var(--font-display);
@@ -434,7 +440,6 @@ ul.cuts li.cut.is-on {
   #detail { padding: 1.1rem 1rem; }
   ul.cuts li.cut.is-on { box-shadow: -0.5rem 0 0 var(--red-wash), 0.5rem 0 0 var(--red-wash); }
 }
-#diagram .body .nostril { fill: #fff; opacity: 0.55; }
 
 /* ============================================================
    Grading systems and breeds

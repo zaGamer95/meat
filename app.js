@@ -114,6 +114,14 @@
 
   function hideTip() { if (tooltip) tooltip.hidden = true; }
 
+  /* Some cuts are drawn as several shapes (sirloin, belly, picnic); light
+     them all so the whole cut reads as one region. */
+  function groupHover(id, on) {
+    regions().forEach(function (r) {
+      if (r.getAttribute('data-primal') === id) r.classList.toggle('is-hover', on);
+    });
+  }
+
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
@@ -263,9 +271,12 @@
     r.setAttribute('role', 'button');
     r.setAttribute('aria-label', byId[id] ? byId[id].names.en : id);
 
-    r.addEventListener('mouseenter', function (e) { if (byId[id]) showTip(byId[id], e); });
+    r.addEventListener('mouseenter', function (e) {
+      groupHover(id, true);
+      if (byId[id]) showTip(byId[id], e);
+    });
     r.addEventListener('mousemove', moveTip);
-    r.addEventListener('mouseleave', hideTip);
+    r.addEventListener('mouseleave', function () { groupHover(id, false); hideTip(); });
     r.addEventListener('click', function () { hideTip(); showDetail(id); });
     r.addEventListener('focus', function () {
       var b = r.getBoundingClientRect();
