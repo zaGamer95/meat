@@ -325,21 +325,13 @@ td.temp { font-family: var(--font-mono); white-space: nowrap; color: var(--text)
 #diagram .primal:focus { outline: none; }
 #diagram .primal:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 
-#diagram .divides path,
-#diagram .primal.edge {
-  stroke: #fff; stroke-width: 1.5;
-  stroke-linecap: round; stroke-dasharray: 0.1 4.2;
-}
-#diagram .divides path { fill: none; }
+#diagram .divides path { fill: none; stroke: #fff; stroke-linecap: round; }
+/* borders are pre-placed dots (zero-length subpaths), traced once per shared edge */
+#diagram .divides .dots { stroke-width: 1.9; pointer-events: none; }
 #diagram .primal.is-hover { fill: var(--red); }
-#diagram .rim {
-  fill: none; stroke: var(--text); stroke-width: 12;
-  stroke-linejoin: round; pointer-events: none;
-}
 #diagram .overlay { pointer-events: none; }
 #diagram .body .comb { fill: var(--red); }
 #diagram .body .patch { fill: none; stroke: var(--text); stroke-width: 3; }
-#diagram.clipdiag .primal { stroke: #fff; stroke-width: 1.4; stroke-linecap: round; stroke-dasharray: 0.1 4; }
 #diagram .labels text {
   fill: #fff; text-anchor: middle;
   font-family: var(--font-display);
